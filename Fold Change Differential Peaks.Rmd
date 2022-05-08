@@ -19,7 +19,7 @@ For using featureCounts package, we should first create a .saf file, containing 
 run the following command on the terminal:
 
 ```{bash}
-echo -e "GeneID\tChr\tStart\tEnd\tStrand" > test.saf
+echo -e "GeneID\tChr\tStart\tEnd\tStrand" > TMM_THOR-diffpeaks.saf
 awk -v FS='\t' -v OFS='\t' 'FNR > 1 { print $4, $1, $2, $3, $6 }' ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.narrowPeak >> ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf
 ```
 
@@ -31,7 +31,7 @@ data_type = 'Single-End'
 bam_files_file_path = '~/FoldChange_THOR/data/bwa/mergedLibrary'
 saf_file_path = '~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf'
 count_matrix = create_count_matrix(data_type, bam_files_file_path, saf_file_path)
-pander::pander(head(df@counts, c(6, 6)))
+pander::pander(head(count_matrix, c(6, 6)))
 ```
 ```{r}
 colnames(count_matrix)
