@@ -16,7 +16,7 @@ plot_foldChange_counts <- function(foldchange, count_matrix, lfc_thr = 0.58) {
   threshold <- abs(foldchange) > lfc.cutoff
   
   # Open a pdf file
-  # pdf("plot_foldChange_counts.pdf") 
+  pdf("plot_foldChange_counts.pdf")
   # Volcano plot
   ggplot2::ggplot(count_matrix) +
     ggplot2::geom_point(ggplot2::aes(x=rowMeans(count_matrix), y=foldchange, colour=threshold)) +
@@ -24,6 +24,6 @@ plot_foldChange_counts <- function(foldchange, count_matrix, lfc_thr = 0.58) {
     ggplot2::xlab("mean of normalized counts") + 
     ggplot2::ylab("log2 fold change")
   # Close the pdf file
-  # dev.off()
-  # print("saved as plot_foldChange_counts.pdf") 
+  dev.off()
+  print("saved as plot_foldChange_counts.pdf")
 }
