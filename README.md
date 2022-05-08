@@ -1,17 +1,4 @@
----
-title: "Fold Change Differential Peaks"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-setwd("/home/mina")
-source('~/FoldChange_THOR/R/create_count_matrix.R')
-source('~/FoldChange_THOR/R/calculate_fold_change.R')
-source('~/FoldChange_THOR/R/calculate_pvalues.R')
-source('~/FoldChange_THOR/R/plot_foldChange_pValues.R')
-source('~/FoldChange_THOR/R/plot_foldChange_counts.R')
-```
+# Fold Change Differential Peaks
 
 ## 1) Create count matrix
 ### 1a.) create .saf file
@@ -56,6 +43,8 @@ raw_pvalues = calculate_pvalues(count_matrix, grp1, grp2)
 plot_foldChange_pValues(count_matrix, fold_changes, raw_pvalues, pvalue_thr = 0.05, lfc_thr = 0.58)
 ```
 
+![alt foldChange_pValues](https://github.com/minashaigan/FoldChange_THOR/blob/main/Figures/foldChange_pValues.png)
+  
 ## 4) plot fold changes in normalized counts
 
 You can also plot fold changes in normalized counts:
@@ -64,3 +53,4 @@ You can also plot fold changes in normalized counts:
 plot_foldChange_counts(fold_changes, count_matrix, lfc_thr = 0.58)
 ```
 
+![alt foldChange_pValues](https://github.com/minashaigan/FoldChange_THOR/blob/main/Figures/FoldChange_counts.png)
