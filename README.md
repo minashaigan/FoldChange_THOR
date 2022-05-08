@@ -32,13 +32,13 @@ pander::pander(head(count_matrix, c(6, 6)))
 ```{r}
 colnames(count_matrix)
 ```
-[1] "Old_H3K9ac_R1.mLb.clN.sorted.bam"   "Old_H3K9ac_R10.mLb.clN.sorted.bam"  "Old_H3K9ac_R2.mLb.clN.sorted.bam"  
- [4] "Old_H3K9ac_R3.mLb.clN.sorted.bam"   "Old_H3K9ac_R4.mLb.clN.sorted.bam"   "Old_H3K9ac_R5.mLb.clN.sorted.bam"  
- [7] "Old_H3K9ac_R6.mLb.clN.sorted.bam"   "Old_H3K9ac_R7.mLb.clN.sorted.bam"   "Old_H3K9ac_R8.mLb.clN.sorted.bam"  
-[10] "Old_H3K9ac_R9.mLb.clN.sorted.bam"   "Young_H3K9ac_R1.mLb.clN.sorted.bam" "Young_H3K9ac_R2.mLb.clN.sorted.bam"
-[13] "Young_H3K9ac_R3.mLb.clN.sorted.bam" "Young_H3K9ac_R4.mLb.clN.sorted.bam" "Young_H3K9ac_R5.mLb.clN.sorted.bam"
-[16] "Young_H3K9ac_R6.mLb.clN.sorted.bam" "Young_H3K9ac_R7.mLb.clN.sorted.bam" "Young_H3K9ac_R8.mLb.clN.sorted.bam"
-[19] "Young_H3K9ac_R9.mLb.clN.sorted.bam"
+#>[1] "Old_H3K9ac_R1.mLb.clN.sorted.bam"   "Old_H3K9ac_R10.mLb.clN.sorted.bam"  "Old_H3K9ac_R2.mLb.clN.sorted.bam"  
+#>[4] "Old_H3K9ac_R3.mLb.clN.sorted.bam"   "Old_H3K9ac_R4.mLb.clN.sorted.bam"   "Old_H3K9ac_R5.mLb.clN.sorted.bam"  
+#>[7] "Old_H3K9ac_R6.mLb.clN.sorted.bam"   "Old_H3K9ac_R7.mLb.clN.sorted.bam"   "Old_H3K9ac_R8.mLb.clN.sorted.bam"  
+#>[10] "Old_H3K9ac_R9.mLb.clN.sorted.bam"   "Young_H3K9ac_R1.mLb.clN.sorted.bam" "Young_H3K9ac_R2.mLb.clN.sorted.bam"
+#>[13] "Young_H3K9ac_R3.mLb.clN.sorted.bam" "Young_H3K9ac_R4.mLb.clN.sorted.bam" "Young_H3K9ac_R5.mLb.clN.sorted.bam"
+#>[16] "Young_H3K9ac_R6.mLb.clN.sorted.bam" "Young_H3K9ac_R7.mLb.clN.sorted.bam" "Young_H3K9ac_R8.mLb.clN.sorted.bam"
+#>[19] "Young_H3K9ac_R9.mLb.clN.sorted.bam"
 
 ## 2) Calculate fold changes
 Based on indices of two biological groups:
