@@ -6,7 +6,7 @@ For using featureCounts package, we should first create a .saf file, containing 
 run the following command on the terminal:
 
 ```{bash}
-echo -e "GeneID\tChr\tStart\tEnd\tStrand" > TMM_THOR-diffpeaks.saf
+echo -e "GeneID\tChr\tStart\tEnd\tStrand" > ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf
 awk -v FS='\t' -v OFS='\t' 'FNR > 1 { print $4, $1, $2, $3, $6 }' ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.narrowPeak >> ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf
 ```
 
