@@ -21,7 +21,7 @@ count_matrix = create_count_matrix(data_type, bam_files_file_path, saf_file_path
 pander::pander(head(count_matrix, c(6, 6)))
 ```
 |  Old_H3K9ac_R1.mLb.clN.sorted.bam | Old_H3K9ac_R10.mLb.clN.sorted.bam |Old_H3K9ac_R2.mLb.clN.sorted.bam | Old_H3K9ac_R3.mLb.clN.sorted.bam |Old_H3K9ac_R4.mLb.clN.sorted.bam| Old_H3K9ac_R5.mLb.clN.sorted.bam|
-| --- | --- |
+| --- | --- |--- | --- | --- | --- | --- | --- |
 | 128 | 97 |134|39|142|142|
 | 45 | 19 |34|22|64|64|
 | 33 | 13 |24|14|35|35|
