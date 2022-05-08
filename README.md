@@ -1,1 +1,66 @@
-# FoldChange_THOR
+---
+title: "Fold Change Differential Peaks"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("/home/mina")
+source('~/FoldChange_THOR/R/create_count_matrix.R')
+source('~/FoldChange_THOR/R/calculate_fold_change.R')
+source('~/FoldChange_THOR/R/calculate_pvalues.R')
+source('~/FoldChange_THOR/R/plot_foldChange_pValues.R')
+source('~/FoldChange_THOR/R/plot_foldChange_counts.R')
+```
+
+## 1) Create count matrix
+### 1a.) create .saf file
+For using featureCounts package, we should first create a .saf file, containing list of regions of peaks based on THOR-exp-<date>-diffpeaks.narrowPeak file.
+run the following command on the terminal:
+
+```{bash}
+echo -e "GeneID\tChr\tStart\tEnd\tStrand" > test.saf
+awk -v FS='\t' -v OFS='\t' 'FNR > 1 { print $4, $1, $2, $3, $6 }' ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.narrowPeak >> ~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf
+```
+
+### 1b.) Execute featureCounts
+Based of data type which can be 'Single-End' or 'Paired-End', file path of .saf file, and path of .bam files:
+
+```{r}
+data_type = 'Single-End'
+bam_files_file_path = '~/FoldChange_THOR/data/bwa/mergedLibrary'
+saf_file_path = '~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf'
+count_matrix = create_count_matrix(data_type, bam_files_file_path, saf_file_path)
+pander::pander(head(df@counts, c(6, 6)))
+```
+```{r}
+colnames(count_matrix)
+```
+
+## 2) Calculate fold changes
+Based on indices of two biological groups:
+
+```{r}
+grp1 = c(1:10)
+grp2 = c(11:19)
+fold_changes = calculate_fold_change(count_matrix, grp1, grp2)
+head(fold_changes)
+```
+
+## 3) plot fold changes in p-values
+
+You can also plot fold changes in p-values:
+
+```{r}
+raw_pvalues = calculate_pvalues(count_matrix, grp1, grp2)
+plot_foldChange_pValues(count_matrix, fold_changes, raw_pvalues, pvalue_thr = 0.05, lfc_thr = 0.58)
+```
+
+## 4) plot fold changes in normalized counts
+
+You can also plot fold changes in normalized counts:
+
+```{r}
+plot_foldChange_counts(fold_changes, count_matrix, lfc_thr = 0.58)
+```
+
