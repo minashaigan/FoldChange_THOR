@@ -18,11 +18,20 @@ data_type = 'Single-End'
 bam_files_file_path = '~/FoldChange_THOR/data/bwa/mergedLibrary'
 saf_file_path = '~/FoldChange_THOR/data/TMM_THOR-diffpeaks.saf'
 count_matrix = create_count_matrix(data_type, bam_files_file_path, saf_file_path)
-pander::pander(head(df@counts, c(6, 6)))
+pander::pander(head(count_matrix, c(6, 6)))
 ```
+|  Old_H3K9ac_R1.mLb.clN.sorted.bam | Old_H3K9ac_R10.mLb.clN.sorted.bam |
+| --- | --- |
+| 128 | 97 |
+| 45 | 19 |
+| 33 | 13 |
+| 156| 105|
+  
 ```{r}
 colnames(count_matrix)
 ```
+  
+[1]  0.4339349  0.4972222  0.8037886  0.4511144 -0.2598497  0.4383431
 
 ## 2) Calculate fold changes
 Based on indices of two biological groups:
