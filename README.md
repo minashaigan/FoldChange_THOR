@@ -74,6 +74,7 @@ plot_foldChange_counts(fold_changes, count_matrix, lfc_thr = 0.58)
 ![alt foldChange_pValues](https://github.com/minashaigan/FoldChange_THOR/blob/main/Figures/FoldChange_counts.png)
 
   ### References
+  1. Differential peaks analysis ([`rgt-THOR`](https://www.regulatory-genomics.org/thor-2/basic-intrstruction/))
   1. Count reads in consensus peaks ([`featureCounts`](http://bioinf.wehi.edu.au/featureCounts/))
   2. Fold Change Visualization ([`hbctraining`](https://hbctraining.github.io/Intro-to-R-with-DGE/lessons/B1_DGE_visualizing_results.html))
   3. Differential expression data analysis ([`data_analysis`](https://www.bioconductor.org/help/course-materials/2015/Uruguay2015/day5-data_analysis.html))
